@@ -8,6 +8,7 @@ Files required->
 	fonts-powerline (apt) // for glyphs in zsh themes
 =i3 (apt)
 	i3-gaps (search for github repo) // for gaps between i3 tiles
+=rofi
 =neofetch (apt) // for quick info
 =scrot (apt) // for screenshots, bind to PrntScrn in the i3 config
 =lxappearance (apt)
