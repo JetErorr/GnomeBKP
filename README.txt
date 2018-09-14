@@ -42,3 +42,6 @@ x=conky
 =httping
 =tree
 =mc
+
+=for_window class=["^.*"] border pixel 0
+ Alexa, set a bomb for 3am tomorrow
