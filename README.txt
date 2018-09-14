@@ -29,7 +29,7 @@ Files required->
 ==CTRL+GRAVE shows past notifications
 
 =pipes.sh
-=cmatrix
+==cmatrix
 x=glitchlock
 =gotop
 
