@@ -168,7 +168,7 @@ bar {
 #########Start of custom rice#################################
 ##############################################################
 exec --no-startup-id nitrogen --restore
-
+border pixel 0
 $super+u border pixel 0
 $super+l exec --no-startup-id i3lock -c 000000
 
@@ -239,3 +239,6 @@ exec --no-startup-id tilda
 
 #Enable tapping for the touchpad
 exec xinput set-prop 12 308 1
+
+for_window [class="^.*"] border pixel 0
+
