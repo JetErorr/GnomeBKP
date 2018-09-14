@@ -238,4 +238,4 @@ exec --no-startup-id tilda
 #added $super to top
 
 #Enable tapping for the touchpad
-xinput set-prop 16 326 1
+exec xinput set-prop 12 308 1
