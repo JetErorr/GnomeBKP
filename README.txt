@@ -26,6 +26,7 @@ Files required->
 	==figlet (apt) (optional) fonts and
 	==lolcat (apt)
 ==Enabled Touchpad 'Tap' (i3 config)
+	==xinput
 ==CTRL+GRAVE shows past notifications
 
 =pipes.sh
@@ -45,3 +46,19 @@ x=conky
 
 =for_window class=["^.*"] border pixel 0
  Alexa, set a bomb for 3am tomorrow
+
+=polybar
+
+=For brightness
+	=Make the file /usr/share/X11/xorg.conf.d/20-intel.conf
+	=Add the following to it (not the hashes)
+#
+Section "Device"
+        Identifier  "card0"
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+        BusID       "PCI:0:2:0"
+EndSection
+#
+	=Logout and back in, the buttons should work right away,
+	=If the buttons don't work, check if they are bound properly

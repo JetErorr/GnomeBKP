@@ -195,7 +195,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id compton
 
-gaps outer 4
+gaps outer 3
 gaps inner 3
 smart_gaps off
 #hide_edge_borders smart_no_gaps
@@ -240,4 +240,9 @@ exec --no-startup-id tilda
 #Enable tapping for the touchpad
 exec xinput set-prop 12 308 1
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
+
+###22/9/'18
+
+#Brightness
+
