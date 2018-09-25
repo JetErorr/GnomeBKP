@@ -239,6 +239,7 @@ exec --no-startup-id tilda
 
 #Enable tapping for the touchpad
 exec xinput set-prop 12 308 1
+exec xinput set-prop 16 294 1
 
 for_window [class="^.*"] border pixel 2
 
