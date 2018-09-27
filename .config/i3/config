@@ -243,7 +243,4 @@ exec xinput set-prop 16 294 1
 
 for_window [class="^.*"] border pixel 2
 
-###22/9/'18
-
-#Brightness
-
+bindsym --release XF86PowerOff i3-sensible-terminal

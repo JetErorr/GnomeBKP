@@ -62,3 +62,8 @@ EndSection
 #
 	=Logout and back in, the buttons should work right away,
 	=If the buttons don't work, check if they are bound properly
+
+=axel
+=wget
+=aria2c
+
