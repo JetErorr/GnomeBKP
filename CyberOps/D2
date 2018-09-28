@@ -1,0 +1,19 @@
+20/8/'18
+
+---What is OSI.? (Open System Interconnection)
+--Physical (Wired / Wireless Connection)
+--Data Link
+--Network (TCP (Bank Transactions) / UDP (Telecasts))
+--Transport 
+--Session 
+--Presentation 
+--Application 
+
+-YouTube can handle UDP and TCP both.
+
+---Rouge APs (Man in the Middle)
+--Identifications
+-Phising Login Pages
+What is .iso? (Not an abbrevation, just the standard ISO 9880 file struct)
+What is loopback? (To check internal hardware / self running servers)
+What is ipv4? (learn in depth) (icann)
