@@ -67,3 +67,4 @@ EndSection
 =wget
 =aria2c
 
+=polybar script (poly)
