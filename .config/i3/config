@@ -252,4 +252,5 @@ bindsym XF86PowerOff i3-sensible-terminal
 
 bindsym Mod1+Tab exec rofi -show window
 
-exec poly
+exec poly 
+exec --no-startup-id nm-applet &
