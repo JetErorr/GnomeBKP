@@ -47,13 +47,13 @@ tray-position = right
 tray-maxsize = 24
 tray-detached = false
 ;tray-transparent = false
-;tray-background = ${color.background}
+;tray-background = ${colors.background}
 tray-scale = 1.0
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding-left = 0
-;tray-transparent = true
-;tray-background = #ff424242
+;tray-padding-left = 0
+;tray-transparent = false
+;tray-background = #33424242
 
 ;padding = 2
 
@@ -68,8 +68,8 @@ border-size = 2
 border-bottom-size = 0
 border-top-size = 0
 border-color = #00ffffff
-padding-left = 2
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 2
 module-margin-right = 2
@@ -92,9 +92,12 @@ font-5 = "Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;1"
 
 position = top
 
-modules-left = i3 backlight temperature filesystem cpu memory
+modules-left = i3 temperature filesystem cpu memory
+
 modules-center = xwindow
-modules-right = wlan volume xkeyboard battery eth date powermenu
+
+modules-right = backlight volume battery wlan eth
+;volume battery eth date powermenu wlan
 ;wm-restack = 
 
 ;override-redirect = true
@@ -112,7 +115,7 @@ label = %title:0:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
-;blacklist-0 = num lock
+blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
