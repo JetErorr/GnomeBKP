@@ -37,25 +37,15 @@ height = 25px
 offset-x = 0%
 offset-y = 0%
 radius = 1.0
-;border-left-size = 50
-;border-right-size = 50
-;padding-right-size = 50
 fixed-center = true
 
-;tray = center
-tray-position = right
 tray-maxsize = 24
-tray-detached = false
-;tray-transparent = false
-;tray-background = ${color.background}
-tray-scale = 1.0
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding-left = 0
-;tray-transparent = true
-;tray-background = #ff424242
+tray-detached = true
+tray-transparent = false
 
-;padding = 2
+tray-scale = 1.0
+
+padding = 0
 
 background = #aa424242
 #background =#00000000
@@ -94,7 +84,13 @@ position = top
 
 modules-left = i3 backlight temperature filesystem cpu memory
 modules-center = xwindow
-modules-right = wlan volume xkeyboard battery eth date powermenu
+modules-right = wlan volume xkeyboard battery eth date powermenu nm-applet
+
+tray-position = right
+tray-padding = 0
+;tray-transparent = true
+'tray-background = #0063ff
+
 ;wm-restack = 
 
 ;override-redirect = true
@@ -106,9 +102,8 @@ modules-right = wlan volume xkeyboard battery eth date powermenu
 type = internal/xwindow
 label = %title:0:30:...%
 
-;[module/nm-applet]
-;type = custom/script
-;exec = nm-applet &
+[module/nm-applet]
+type = 
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -402,15 +397,14 @@ ramp-2 = 
 ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
-;tray-detached = true
 type = custom/menu
-;fixed-center = false
+
 format-spacing = 1
 
-label-open = 
-label-open-foreground = ${colors.foreground}
-label-close = cancel
-label-close-foreground = ${colors.foreground-alt}
+label-open = 
+label-open-foreground = ${colors.primary}
+label-close =  cancel
+label-close-foreground = ${colors.primary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
