@@ -88,16 +88,24 @@ font-4 = "FontAwesome:style=Regular=10;1"
 font-5 = "Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;1"
 #font-4 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=8;1"
 
-
-
 position = top
+
+
+
+
+
 
 modules-left = i3 temperature filesystem cpu2 memory2
 
 modules-center = xwindow
 
 modules-right = backlight volume battery wlan eth
+
+
+
+
 ;volume battery eth date powermenu wlan
+
 ;wm-restack = 
 
 ;override-redirect = true
@@ -234,19 +242,26 @@ label-song-ellipsis = true
 type = internal/backlight
 card = intel_backlight
 
-format = <bar> <label>
-format-prefix = " "
-
-bar-width = 10
+format =<label> <bar>
+label = SCRN
+label-font = 1
+;format-prefix = ""
+format-foreground = #FFfb8f
+format-underline = #fffb8f
+format-padding = 2 
+bar-width = 6
 bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
+bar-indicator-foreground = #FFfb8f
+bar-indicator-font = 4
 bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = ${colors.alert}
+bar-fill-font = 4
+bar-fill-foreground = #FFfb8f
+#${colors.alert}
+ramp-
 bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground}
+bar-empty-font = 4
+bar-empty-foreground = #66fffb8f
+#${colors.foreground}
 
 [module/backlight-acpi]
 inherit = module/backlight
@@ -490,7 +505,7 @@ ramp-coreload-4-foreground = #ffffff
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 5
 ramp-coreload-5-foreground = #ffffff
-amp-coreload-6 = ▇
+ramp-coreload-6 = ▇
 ramp-coreload-6-font = 5
 ramp-coreload-6-foreground = #ff3b51
 ramp-coreload-7 = █
@@ -519,5 +534,30 @@ bar-used-fill-font = 4
 bar-used-fill-foreground = #ffaaf5
 bar-used-empty = ─
 bar-used-empty-font = 4
-bar-used-empty-foreground = #934e94
+bar-used-empty-foreground = #66ffaaf5
+#934e94
 
+[module/wifi2]
+type = internal/network
+interface = net1
+interval = 3.0
+;udspeed-minwidth = 0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = #666
+format-connected-prefix-offset = -6
+label-connected = %downspeed:8%
+
+;format-disconnected = <label-disconnected>
+;format-disconnected-prefix = " "
+;format-disconnected-prefix-foreground = #666
+;label-disconnected = not connected
+;label-disconnected-foreground = #999
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #666
