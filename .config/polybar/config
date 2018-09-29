@@ -42,7 +42,7 @@ radius = 1.0
 ;padding-right-size = 50
 fixed-center = true
 
-;tray = center
+tray = right
 tray-position = right
 tray-maxsize = 24
 tray-detached = false
