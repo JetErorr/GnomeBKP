@@ -234,7 +234,7 @@ set $temppp #ffffff
 #  client.urgent           $base02 $base08    $base00 $base0F
 ##########
 
-$super+d exec rofi -show run -theme onedark
+
 # -lines 5 -eh 2 -width 100 -padding 300 -opacity "80" -bw 0 -bc "$base02" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 1 -font "Fira Code Retina 16" -hlfg "#9575cd"
 
 exec --no-startup-id tilda
@@ -251,6 +251,7 @@ for_window [class="^.*"] border pixel 2
 bindsym XF86PowerOff i3-sensible-terminal
 
 bindsym Mod1+Tab exec rofi -show window
+$super+d exec rofi -show run -theme onedark
 
 exec_always ~/Scripts/poly
 exec_always --no-startup-id "nm-applet &"
