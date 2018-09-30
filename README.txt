@@ -82,3 +82,6 @@ EndSection
 =axel
 =wget
 =aria2c
+=fonts-font-awesome (apt)
+=pacmd list-sinks
+
