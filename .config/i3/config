@@ -173,7 +173,7 @@ $super+r mode "resize"
 exec --no-startup-id nitrogen --restore
 border pixel 0
 $super+u border pixel 0
-$super+l exec --no-startup-id i3lock -c 000000
+#$super+l exec --no-startup-id i3lock -c 000000
 
 exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 3"
 
@@ -295,3 +295,5 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape
 }
+
+$super+l exec ~/Scripts/lockk

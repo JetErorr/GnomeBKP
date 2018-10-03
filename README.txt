@@ -85,3 +85,4 @@ EndSection
 =fonts-font-awesome (apt)
 =pacmd list-sinks
 
+=Changed Lockscreen, a very goot.!
