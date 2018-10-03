@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ $# -ne 0 ]]; then
+pipes.sh -t $1
+else
+pipes.sh
+fi

@@ -1,0 +1,10 @@
+#!/bin/bash
+FOLD="$HOME/Scripts"
+FILE="$FOLD/$1"
+if [[ -f $FILE ]]; then
+	nano $FILE
+else
+	echo '#!/bin/bash' > $FILE
+	chmod +x $FILE
+	nano $FILE
+fi

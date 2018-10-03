@@ -1,0 +1,13 @@
+#!/bin/bash
+cp ~/Scripts/* ~/gnomebkp/Scripts/ -r
+cp ~/.config/rofi/* ~/gnomebkp/.config/rofi/ -r
+cp ~/.config/i3/* ~/gnomebkp/.config/i3/ -r
+cp ~/.config/polybar/* ~/gnomebkp/.config/polybar/ -r
+cp ~/.zshrc ~/gnomebkp/.zshrc
+cp ~/.oh-my-zsh/* ~/gnomebkp/.oh-my-zsh/ -r
+cd ~/gnomebkp/
+git add -A
+DT="$(date)"
+git commit -m "$DT"
+git push
+cd ~
