@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/gnomebkp
+cp Scripts/* ~/Scripts/ -r
+cp rofi/* 
