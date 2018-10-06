@@ -88,3 +88,4 @@ EndSection
 =Changed Lockscreen, a very goot.!
 
 =Added fading animations to all compton elements
+=added a desync script to restore the files from a coled repo
