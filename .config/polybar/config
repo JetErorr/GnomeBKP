@@ -10,6 +10,9 @@
 [colors]
 ;orange = #FF6200
 ;orange = #d65d0e
+#background = ${xrdb:background}
+#foreground = ${xrdb:foreground}
+
 darkgray = ${xrdb:color8}
 orange = ${xrdb:color9}
 white = #d1d1d1
@@ -20,10 +23,8 @@ blue = #95aec7
 yellow = #c7ae95
 green = #aec795
 background = #000000
-#background = ${xrdb:background}
 background-alt = #40545E
 foreground = #ffffffff
-#foreground = ${xrdb:foreground}
 foreground-alt = #55
 primary = #1f222d
 secondary = #FF6200
@@ -32,118 +33,89 @@ net = ${xrdb:color11}
 
 [bar/main]
 ;monitor = 8
+;border-left-size = 50
+;border-right-size = 50
+;padding-right-size = 50
+
+;padding = 2
+position = top
 width = 100%
 height = 25px
 offset-x = 0%
 offset-y = 0%
 radius = 1.0
-;border-left-size = 50
-;border-right-size = 50
-;padding-right-size = 50
 fixed-center = true
 
+;tray-background = ${colors.background}
+;tray-transparent = false
+;tray-padding-left = 0
+;tray-transparent = false
+;tray-background = #33424242
 tray = right
 tray-position = right
 tray-maxsize = 24
 tray-detached = false
-;tray-transparent = false
-;tray-background = ${colors.background}
 tray-scale = 1.0
 tray-offset-x = 0
 tray-offset-y = 0
-;tray-padding-left = 0
-;tray-transparent = false
-;tray-background = #33424242
 
-;padding = 2
-
-background = #aa424242
 #background =#00000000
+background = #aa424242
 foreground = ${colors.foreground}
-
 line-size = 3
 line-color = #f00
-
 border-size = 2
 border-bottom-size = 0
 border-top-size = 0
 border-color = #00ffffff
 padding-left = 1
 padding-right = 1
-
 module-margin-left = 2
 module-margin-right = 2
 
 #font-0 = fixed:pixelsize=10;1
 #font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 #font-2 = siji:pixelsize=10;1
-
-
+#font-2 = "Font Awesome 5 Free Regular:style=Regular:pixelsize=8;1"
+#font-4 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=8;1"
 font-0 = Sans-Regular:size=8;1
 font-1 = Siji:size=12;1
 font-2 = "FontAwesome:style=Regular:pixelsize=10;1"
 font-3 = "FontAwesome:style=Regular:pixelsize=10;1"
 font-4 = "FontAwesome:style=Regular=10;1"
-#font-2 = "Font Awesome 5 Free Regular:style=Regular:pixelsize=8;1"
 font-5 = "Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;1"
-#font-4 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=8;1"
-
-position = top
-
-
-
-
-
-
-modules-left = i3 temperature filesystem cpu2 memory2
-
-modules-center = xwindow
-
-modules-right = backlight volume date battery wlan eth
-
-
-
 
 ;volume battery eth date powermenu wlan
-
 ;wm-restack = 
-
 ;override-redirect = true
-
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
+modules-left = i3 temperature filesystem cpu2 memory2
+modules-center = xwindow
+modules-right = backlight volume date battery wlan eth
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
 
-;[module/nm-applet]
-;type = custom/script
-;exec = nm-applet &
-
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
-
 label-layout = %layout%
 label-layout-underline = ${colors.secondary}
-
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
+;mount-1 = /home
 type = internal/fs
 interval = 25
-
 mount-0 = /
-;mount-1 = /home
-
 #15100e
 label-mounted = %{F#ffffff}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -151,19 +123,15 @@ label-unmounted-foreground = #295f48
 
 [module/bspwm]
 type = internal/bspwm
-
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
-
 label-occupied = %index%
 label-occupied-padding = 2
-
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
-
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
@@ -173,40 +141,29 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-
-
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
-
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
-
 ; focused = Active workspace on focused monitor
 label-focused =%icon%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
-
 ; unfocused = Inactive workspace on any monitor
 label-unfocused =%icon%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
-
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
 label-focused-font = 2
-
-
-
 ;ws-icon-0 = 1;
 ;ws-icon-1 = 2; 
 ;ws-icon-2 = 3;
@@ -224,17 +181,14 @@ ws-icon-4 = 5;ᚏ
 ;ws-icon-9 = 10;10
 ws-icon-default = !
 
-
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
 icon-prev = 
 icon-stop = 
 icon-play = 
 icon-pause = 
 icon-next = 
-
 label-song-maxlen = 25
 label-song-ellipsis = true
 
@@ -288,22 +242,25 @@ label = %percentage_used%%
 type = internal/network
 interface = wlo1
 interval = 3.0
-
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.foreground}
 label-connected = %essid%
-
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = •
-ramp-signal-1 = ••
-ramp-signal-2 = •••
-ramp-signal-3 = ••••
-ramp-signal-4 = •••••
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+;ramp-signal-0 = •
+;ramp-signal-1 = ••
+;ramp-signal-2 = •••
+;ramp-signal-3 = ••••
+;ramp-signal-4 = •••••
 ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
@@ -325,23 +282,13 @@ format-disconnected =
 [module/date]
 type = internal/date
 interval = 5
-
 date = "  %d.%m.%Y |"
 date-alt = " %Y-%m-%d"
-
 time =  %H:%M
 time-alt = %H:%M:%S
-
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-
 label = %date% %time%
-
-#[module/bumblebee]
-#type = custom/script
-#interval = 4
-#exec = ~/.config/polybar/custom/bumblebee.sh
-
 
 [module/volume]
 type = internal/pulseaudio
@@ -356,7 +303,6 @@ speaker-mixer = Speaker
 headphone-mixer = Headphone
 headphone-id = 1
 mapped = true
-
 format-volume = <ramp-volume> <label-volume>
 label-muted =  mute
 label-muted-foreground = #66
@@ -366,31 +312,23 @@ ramp-volume-2 = 
 ramp-headphones-0 = 
 ramp-headphones-1 = 
 
-
-
-
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.alert}
-
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${colors.primary}
-
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${colors.secondary}
-
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-foreground = ${colors.foreground}
-
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -399,21 +337,17 @@ animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 500
 
-
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-
 format = <ramp> <label>
 format-underline = ${colors.secondary}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
-
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
-
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
@@ -424,14 +358,12 @@ ramp-foreground = ${colors.foreground}
 type = custom/menu
 ;fixed-center = false
 format-spacing = 1
-
 label-open = 
 label-open-foreground = ${colors.foreground}
 label-close = cancel
 label-close-foreground = ${colors.foreground-alt}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
-
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
@@ -440,27 +372,22 @@ menu-0-2 = suspend
 menu-0-2-exec = menu-open-3
 menu-0-3 = logout
 menu-0-3-exec = menu-open-4
-
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
 menu-1-1-exec = reboot
-
 menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-
 menu-3-0 = suspend
 menu-3-0-exec = suspend
 menu-3-1 = cancel
 menu-3-1-exec = menu-open-0
-
 menu-4-0 = logout
 menu-4-0-exec = i3-msg exit
 menu-4-1 = cancel
 menu-4-1-exec = menu-open-0
-
 
 [settings]
 screenchange-reload = true
@@ -471,7 +398,6 @@ screenchange-reload = true
 [module/cpu2]
 type = internal/cpu
 interval = 0.5
-
 format = <label> <ramp-coreload>
 ;format-background = #66cc99
 format-foreground = #60eaa5
@@ -479,10 +405,8 @@ format-foreground = #60eaa5
 format-underline = #60eaa5
 ;format-overline = #60eaa5
 format-padding = 2
-
 label = CPU
 label-font = 1
-
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 5
 ramp-coreload-0-foreground = #60eaa5

@@ -86,3 +86,5 @@ EndSection
 =pacmd list-sinks
 
 =Changed Lockscreen, a very goot.!
+
+=Added fading animations to all compton elements
