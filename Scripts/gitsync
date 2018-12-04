@@ -1,5 +1,5 @@
 #!/bin/bash
-cp ~/Scripts/* ~/gnomebkp/Scripts/ -r
+#cp ~/Scripts/* ~/gnomebkp/Scripts/ -r
 cp ~/.config/rofi/* ~/gnomebkp/.config/rofi/ -r
 cp ~/.config/i3/* ~/gnomebkp/.config/i3/ -r
 cp ~/.config/polybar/* ~/gnomebkp/.config/polybar/ -r
