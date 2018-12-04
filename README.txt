@@ -35,7 +35,7 @@ Files required->
 ==gotop
 =pipes.sh
 ==cmatrix
-
+=xautolock
 ==Auto script maker
 	==(export PATH=/home/david/pear/bin:$PATH)
 	==PATH="$HOME/Scripts:PATH"
