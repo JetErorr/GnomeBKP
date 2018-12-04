@@ -184,6 +184,7 @@ exec --no-startup-id nm-applet
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #Compton
+exec killall compton
 exec_always --no-startup-id compton
 #i3-gaps
 gaps outer 0
@@ -200,3 +201,10 @@ for_window [class="^.*"] border pixel 2
 bindsym Mod1+Tab exec rofi -show window
 #lockscript
 $super+l exec ~/Scripts/lockk
+# Widow Colours // Needs Ricing, visit /r/unixporn subreddit
+#                         border  background text    indicator
+#  client.focused          $base01 $base01    $base07 $base0F
+#  client.focused_inactive $base03 $base03    $base03 $base0F
+#  client.unfocused        $base02 $base02    $base03 $base0F
+#  client.urgent           $base02 $base08    $base00 $base0F
+##########

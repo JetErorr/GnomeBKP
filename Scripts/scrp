@@ -1,5 +1,5 @@
 #!/bin/bash
-FOLD="$HOME/Scripts"
+FOLD="$HOME/gnomebkp/Scripts"
 FILE="$FOLD/$1"
 if [[ -f $FILE ]]; then
 	nano $FILE

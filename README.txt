@@ -37,6 +37,7 @@ Files required->
 ==cmatrix
 
 ==Auto script maker
+	==(export PATH=/home/david/pear/bin:$PATH)
 	==PATH="$HOME/Scripts:PATH"
 	==export PATH
 	==. .bashrc
