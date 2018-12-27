@@ -193,11 +193,9 @@ gaps inner 3
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
 #Enable tapping on the touchpad
-exec xinput set-prop 12 308 1
-exec xinput set-prop 16 294 1
-exec xinput set-prop 12 276 1
+exec xinput set-prop 12 "libinput Tapping Enabled" 1
 #Window border, all windows
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 #alt-tab window switcher w/ rofi
 bindsym Mod1+Tab exec rofi -show window
 #lockscript

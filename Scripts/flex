@@ -1,2 +1,2 @@
 #!/bin/bash
-toilet -w 151 -d $HOME/repos/figlet-fonts/ -f 3d.flf "$1" | lolcat
+toilet -w 151 -d $HOME/repos/ -f 3d.flf "$1" | lolcat

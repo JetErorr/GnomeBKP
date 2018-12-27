@@ -36,8 +36,9 @@ Files required->
 =pipes.sh
 ==cmatrix
 =xautolock
+=xblacklight
 ==Auto script maker
-	==(export PATH=/home/david/pear/bin:$PATH)
+	==(export PATH=/home/user/lmaoxd/bin:$PATH)
 	==PATH="$HOME/Scripts:PATH"
 	==export PATH
 	==. .bashrc
@@ -45,7 +46,7 @@ Files required->
 
 ==Made flex // Text displays with 
 	==toilet (apt)
-	==figlet (apt) (optional) fonts and
+	==figlet (apt) (optional) (xero-fonts git)fonts and
 	==lolcat (apt)
 
 ==Enabled Touchpad 'Tap' (i3 config)
@@ -58,7 +59,7 @@ Files required->
 =youtube-dl
 =ncmpcpp
 =horst
-=httping
+=httping ( make a script to automate ) 
 =tree
 =mc
 
@@ -89,4 +90,4 @@ EndSection
 =Changed Lockscreen, a very goot.!
 
 =Added fading animations to all compton elements
-=added a desync script to restore the files from a coled repo
+=added a desync script to restore the files from the cloned repo
