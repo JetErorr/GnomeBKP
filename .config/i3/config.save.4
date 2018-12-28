@@ -77,6 +77,7 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -187,6 +188,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #Compton
 exec killall compton
 exec_always --no-startup-id compton
+#i3-gaps
+gaps outer 0
+gaps inner 3
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
 #Enable tapping on the touchpad
@@ -194,14 +198,6 @@ exec xinput set-prop 12 "libinput Tapping Enabled" 1
 exec xinput set-prop 12 "libinput Natural Scrolling Enabled" 1
 #Window border, all windows
 for_window [class="^.*"] border pixel 1
-for_window [class="Nautilus"] floating enable
-#$super+o exec 'nautilus --geometry=150x150'
-#-g 150x150+150x150
-#i3-gaps
-smart_gaps on
-gaps outer 0
-gaps inner 3
-#gaps horizontal 2
 #alt-tab window switcher w/ rofi
 bindsym Mod1+Tab exec rofi -show window
 #lockscript
@@ -213,6 +209,3 @@ client.focused #ffffff #ffffff #ffffff #ffffff
 #  client.unfocused        $base02 $base02    $base03 $base0F
 #  client.urgent           $base02 $base08    $base00 $base0F
 ##########
-#Polybar
-exec_always --no-startup-id pkill polybar
-exec_always --no-startup-id polybar uptop
