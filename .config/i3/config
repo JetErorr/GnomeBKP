@@ -185,13 +185,15 @@ exec --no-startup-id nm-applet
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #Compton
-exec killall compton
+exec pkill compton
 exec_always --no-startup-id compton
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
 #Enable tapping on the touchpad
 exec xinput set-prop 12 "libinput Tapping Enabled" 1
-exec xinput set-prop 12 "libinput Natural Scrolling Enabled" 1
+exec xinput set-prop 16 "libinput Tapping Enabled" 1
+exec xinput set-prop 12 "libinput Natural Scrolling
+exec xinput set-prop 16 "libinput Natural Scrolling Enabled" 1
 #Window border, all windows
 for_window [class="^.*"] border pixel 1
 for_window [class="Nautilus"] floating enable
@@ -214,5 +216,5 @@ client.focused #ffffff #ffffff #ffffff #ffffff
 #  client.urgent           $base02 $base08    $base00 $base0F
 ##########
 #Polybar
-exec_always --no-startup-id pkill polybar
-exec_always --no-startup-id polybar uptop
+#exec_always --no-startup-id pkill polybar
+#exec_always --no-startup-id polybar main

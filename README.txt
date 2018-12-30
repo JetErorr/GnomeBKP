@@ -91,3 +91,7 @@ EndSection
 
 =Added fading animations to all compton elements
 =added a desync script to restore the files from the cloned repo
+
+=nethogs
+=nnn
+=ranger

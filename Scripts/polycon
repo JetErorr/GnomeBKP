@@ -1,2 +1,2 @@
 #!/bin/bash
-code ~/.config/polybar/config
+nano ~/.config/polybar/config
