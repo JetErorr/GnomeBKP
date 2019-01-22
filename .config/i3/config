@@ -136,7 +136,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -168,8 +168,9 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-}
+        status_command i3blocks
+        mode hide
+	}
 #Launcher
 $super+d exec rofi -show run -theme onedark
 #Wallpaper
@@ -192,15 +193,15 @@ exec --no-startup-id tilda
 #Enable tapping on the touchpad
 exec xinput set-prop 12 "libinput Tapping Enabled" 1
 exec xinput set-prop 16 "libinput Tapping Enabled" 1
-exec xinput set-prop 12 "libinput Natural Scrolling
+exec xinput set-prop 12 "libinput Natural Scrolling Enabled" 1
 exec xinput set-prop 16 "libinput Natural Scrolling Enabled" 1
 #Window border, all windows
 for_window [class="^.*"] border pixel 1
-for_window [class="Nautilus"] floating enable
+#for_window [class="Nautilus"] floating enable
 #$super+o exec 'nautilus --geometry=150x150'
 #-g 150x150+150x150
 #i3-gaps
-smart_gaps on
+#smart_gaps on
 gaps outer 0
 gaps inner 3
 #gaps horizontal 2
@@ -218,3 +219,14 @@ client.focused #ffffff #ffffff #ffffff #ffffff
 #Polybar
 #exec_always --no-startup-id pkill polybar
 #exec_always --no-startup-id polybar main
+exec_always --no-startup-id $HOME/gnomebkp/Scripts/poly
+$super+Shift+p exec "polybar-msg cmd toggle"
+#Volume
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+#Experimental
+$super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
+    -nb "#222222" -sb "#aa0088" -sf "#ffffff" -fn Monospace-11 \
+        -nf "#7777bb" -i -p "Exit i3 X session?") = "YES" ] && i3-msg exit`
+        

@@ -40,13 +40,10 @@ radius = 1.0
 fixed-center = true
 
 tray-maxsize = 24
-tray-detached = false
+tray-detached = true
 tray-transparent = false
 
 tray-scale = 1.0
-
-
-
 
 padding = 0
 
@@ -58,7 +55,8 @@ line-size = 3
 line-color = #f00
 
 border-size = 2
-border-bottom = 0
+border-bottom-size = 0
+border-top-size = 0
 border-color = #00ffffff
 padding-left = 2
 padding-right = 2
@@ -72,8 +70,7 @@ module-margin-right = 2
 
 
 font-0 = Sans-Regular:size=8;1
-font-1 = Siji:size=12;1
-font-2 = "FontAwesome:style=Regular:pixelsize=10;1"
+
 font-3 = "FontAwesome:style=Regular:pixelsize=10;1"
 font-4 = "FontAwesome:style=Regular=10;1"
 #font-2 = "Font Awesome 5 Free Regular:style=Regular:pixelsize=8;1"
@@ -84,16 +81,16 @@ font-5 = "Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;1"
 
 position = top
 
-modules-left = i3 temperature filesystem cpu memory backlight
-modules-center = mpd
-modules-right = wlan volume xkeyboard battery eth date powermenu
+modules-left = i3 backlight temperature filesystem cpu memory
+modules-center = xwindow
+modules-right = wlan volume xkeyboard battery eth date powermenu nm-applet
 
 tray-position = right
 tray-padding = 0
 ;tray-transparent = true
-;tray-background = #0063ff
+'tray-background = #0063ff
 
-;wm-restack = 
+;wm-restack =
 
 ;override-redirect = true
 
@@ -103,6 +100,8 @@ tray-padding = 0
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+[module/nm-applet]
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -127,8 +126,8 @@ interval = 25
 mount-0 = /
 ;mount-1 = /home
 
-
-label-mounted = %{F#15100e}%mountpoint%%{F-}: %percentage_used%%
+#15100e
+label-mounted = %{F#ffffff}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #295f48
 
@@ -190,14 +189,22 @@ label-focused-font = 2
 
 
 
-ws-icon-0 = 1; 
-ws-icon-1 = 2;
+ws-icon-0 = 1;
+ws-icon-1 = 2; 
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5; 
 ws-icon-7 = 8;
 ws-icon-9 = 10;
 ws-icon-default =
+;ws-icon-0 = 1;1
+;ws-icon-1 = 2;2
+;ws-icon-2 = 3;3
+;ws-icon-3 = 4;4
+;ws-icon-4 = 5;5 
+;ws-icon-7 = 8;8
+;ws-icon-9 = 10;10
+;ws-icon-default = !
 
 
 [module/mpd]
@@ -258,7 +265,7 @@ interface = wlo1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.net}
+format-connected-underline = ${colors.foreground}
 label-connected = %essid%
 
 format-disconnected =
@@ -276,10 +283,10 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp19s0
+interface = eno1
 interval = 3.0
 
-format-connected-underline = ${colors.net}
+format-connected-underline = ${colors.foreground}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -325,7 +332,7 @@ headphone-mixer = Headphone
 headphone-id = 1
 mapped = true
 
-format-volume = <ramp-volume> <labeel-volume>
+format-volume = <ramp-volume> <label-volume>
 label-muted =  mute
 label-muted-foreground = #66
 ramp-volume-0 = 
@@ -385,7 +392,7 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu

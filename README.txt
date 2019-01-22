@@ -95,3 +95,4 @@ EndSection
 =nethogs
 =nnn
 =ranger
+=ncdu
