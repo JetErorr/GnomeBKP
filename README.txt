@@ -59,7 +59,7 @@ Files required->
 =youtube-dl
 =ncmpcpp
 =horst
-=httping ( make a script to automate ) 
+=httping ( make a script to automate )
 =tree
 =mc
 
