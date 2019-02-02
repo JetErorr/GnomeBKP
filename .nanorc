@@ -1,0 +1,15 @@
+set smooth on
+set autoindent on
+set afterends on
+set atblanks on
+set linenumbers on
+set morespace on
+set mouse on
+set softwrap on
+#set titlecolor brightwhite,black
+#set statuscolor brightwhite,green
+#set errorcolor brightwhite,red
+#set selectedcolor brightwhite,magenta
+#set numbercolor brightwhite,black
+#set keycolor brightwhite
+#set functioncolor brightwhite
