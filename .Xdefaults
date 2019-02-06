@@ -1,0 +1,14 @@
+URxvt.font: xft:inconsolata:pixelsize=16
+URxvt.urlLauncher: firefox
+URxvt.reverseVideo: true
+URxvt.scrollBar: false
+URxvt.saveLines: 4095
+URxvt.iso14755:false
+URxvt.transparent: false
+#URxvt.background: [80]#ffffff
+
+#URxvt.shading: 1
+#URxvt.tintColor: #444
+#URxv.blurRadius: 3x3
+#URxv.fading 
+#URxv.fadeColor: $f0f
