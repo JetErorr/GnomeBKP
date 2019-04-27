@@ -13,5 +13,6 @@ libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
 libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
 autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 
-https://github.com/Airblader/i3/wiki/Building-from-source
+#https://github.com/Airblader/i3/wiki/Building-from-source
 
+sudo apt install nitrogen rofi toilet lolcat 

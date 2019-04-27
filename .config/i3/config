@@ -212,7 +212,7 @@ bindsym Mod1+Tab exec rofi -show window
 $super+l exec ~/gnomebkp/Scripts/lockk
 # Widow Colours // Needs Ricing, visit /r/unixporn subreddit
 #                         border  background text    indicator
-client.focused #ffffff #ffffff #ffffff #ffffff
+#client.focused #ffffff #ffffff #ffffff #ffffff
 #  client.focused_inactive $base03 $base03    $base03 $base0F
 #  client.unfocused        $base02 $base02    $base03 $base0F
 #  client.urgent           $base02 $base08    $base00 $base0F
