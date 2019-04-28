@@ -1,15 +1,4 @@
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
-
 [colors]
-;orange = #FF6200
-;orange = #d65d0e
 darkgray = ${xrdb:color8}
 orange = ${xrdb:color9}
 white = #d1d1d1
@@ -20,10 +9,8 @@ blue = #95aec7
 yellow = #c7ae95
 green = #aec795
 background = #000000
-#background = ${xrdb:background}
 background-alt = #40545E
 foreground = #ffffffff
-#foreground = ${xrdb:foreground}
 foreground-alt = #55
 primary = #1f222d
 secondary = #FF6200
@@ -31,69 +18,48 @@ alert = #bd2c40
 net = ${xrdb:color11}
 
 [bar/main]
-;monitor = 8
+#monitor = eDP1
 width = 100%
 height = 25px
 offset-x = 0%
 offset-y = 0%
 radius = 1.0
 fixed-center = true
-
 tray-maxsize = 24
 tray-detached = false
-tray-transparent = false
-
+tray-transparent = true
 tray-scale = 1.0
-
 padding = 0
-
-background = #aa424242
-#background =#00000000
+background = #77424242
 foreground = ${colors.foreground}
-
-line-size = 3
+line-size = 2
+# line-size = 23
 line-color = #f00
-
 border-size = 2
-border-bottom = 0
+border-bottom-size = 0
+border-top-size = 0
 border-color = #00ffffff
 padding-left = 2
 padding-right = 2
-
 module-margin-left = 2
 module-margin-right = 2
-
-#font-0 = fixed:pixelsize=10;1
-#font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-#font-2 = siji:pixelsize=10;1
-
-
 font-0 = Sans-Regular:size=8;1
-font-1 = Siji:size=12;1
-font-2 = "FontAwesome:style=Regular:pixelsize=10;1"
+font-1 = "Fira Code:style=Regular:pixelsize=10;1"
+font-2 = "FontAwesome:style=Solid:pixelsize=10;1"
 font-3 = "FontAwesome:style=Regular:pixelsize=10;1"
-font-4 = "FontAwesome:style=Regular=10;1"
-#font-2 = "Font Awesome 5 Free Regular:style=Regular:pixelsize=8;1"
-font-5 = "Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;1"
-#font-4 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=8;1"
-
-
-
+font-4 = "FontAwesome:style=Solid=10;1"
 position = top
-
-modules-left = i3 temperature filesystem cpu memory backlight
-modules-center = 
-modules-right = wlan volume xkeyboard battery eth date powermenu
-
+enable-ipc = true
+modules-left = i3 backlight temperature filesystem cpu memory
+modules-center = xwindow
+modules-right = volume battery eth date powermenu
+# wlan
 tray-position = right
 tray-padding = 0
 ;tray-transparent = true
 ;tray-background = #0063ff
-
-;wm-restack = 
-
+;wm-restack = false
 ;override-redirect = true
-
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
@@ -101,31 +67,12 @@ tray-padding = 0
 type = internal/xwindow
 label = %title:0:30:...%
 
-[module/xkeyboard]
-type = internal/xkeyboard
-;blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
 ;mount-1 = /home
-
-
-label-mounted = %{F#15100e}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#ffffff}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #295f48
 
@@ -182,30 +129,25 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %icon%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
 label-focused-font = 2
 
-
-
-ws-icon-0 = 1; 
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5; 
-ws-icon-7 = 8;
-ws-icon-9 = 10;
-ws-icon-default =
-
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2 
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5 
+ws-icon-7 = 8;8
+ws-icon-9 = 10;10
+ws-icon-default = X
 
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = [<<]
+icon-stop = [.]
+icon-play = [|>]
+icon-pause = [||]
+icon-next = [>>]
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -213,10 +155,8 @@ label-song-ellipsis = true
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
-
 format = <bar> <label>
-format-prefix = " "
-
+format-prefix = " "
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
@@ -236,7 +176,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.alert}
 label = %percentage%%
@@ -244,7 +184,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "MEM "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
 label = %percentage_used%%
@@ -257,28 +197,28 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.foreground}
 label-connected = %essid%
-
+format-connected-prefix = " "
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 1
+ramp-signal-1 = 2
+ramp-signal-2 = 3
+ramp-signal-3 = 4
+ramp-signal-4 = 5
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp19s0
+interface = eno1
 interval = 3.0
 
 format-connected-underline = ${colors.foreground}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foireground-alt}
+format-connected-prefix = "ETH "
+format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
@@ -291,10 +231,10 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = "  %d.%m.%Y |"
+date = " %d.%m.%Y |"
 date-alt = " %Y-%m-%d"
 
-time =  %H:%M
+time =%H:%M
 time-alt = %H:%M:%S
 
 ;format-prefix = 
@@ -323,13 +263,13 @@ headphone-id = 1
 mapped = true
 
 format-volume = <ramp-volume> <label-volume>
-label-muted =  mute
+label-muted = "Mute"
 label-muted-foreground = #66
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-ramp-headphones-0 = 
-ramp-headphones-1 = 
+ramp-headphones-0 = 
+ramp-headphones-1 = 
 
 
 
@@ -346,14 +286,14 @@ format-charging-underline = ${colors.alert}
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${colors.primary}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${colors.secondary}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
 ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
@@ -379,18 +319,19 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
+ramp-0 = 1
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu
 
 format-spacing = 1
 
-label-open = 
-label-open-foreground = ${colors.primary}
+label-open = 
+label-open-foreground = #fff
+#${colors.primary}
 label-close =  cancel
 label-close-foreground = ${colors.primary}
 label-separator = |

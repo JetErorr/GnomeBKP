@@ -45,7 +45,7 @@ mpadding = 5
 
 [bar/uptop]
 ; uptop bar {{{
-monitor = eDP1
+#monitor = eDP1
 width = 100%
 height = 20
 radius = 7
