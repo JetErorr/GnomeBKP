@@ -164,13 +164,13 @@ exec --no-startup-id nitrogen --restore
 #Locker
 exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 3"
 #Screenshots
-bindsym Print exec "scrot -e 'mv $f ~/Screenshots/'"
-$super+Print exec "scrot -ue 'mv $f ~/Screenshots/'"
+bindsym Print exec "scrot -e 'mv $f ~/Pictures/Screenshots/'"
+$super+Print exec "scrot -ue 'mv $f ~/Pictures/Screenshots/'"
 #Wireless
 exec --no-startup-id nm-applet
 #Brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 #Compton
 exec pkill compton
 exec_always --no-startup-id compton
@@ -189,7 +189,7 @@ for_window [class="^.*"] border pixel 1
 #i3-gaps
 #smart_gaps on
 gaps outer 0
-gaps inner 3
+gaps inner 5
 #gaps horizontal 2
 #alt-tab window switcher w/ rofi
 bindsym Mod1+Tab exec rofi -show window
@@ -197,7 +197,7 @@ bindsym Mod1+Tab exec rofi -show window
 $super+l exec ~/gnomebkp/Scripts/lockk
 # Widow Colours // Needs Ricing, visit /r/unixporn subreddit
 #                         border  background text    indicator
-#client.focused #ffffff #ffffff #ffffff #ffffff
+client.focused #ffffff #ffffff #ffffff #ffffff
 #  client.focused_inactive $base03 $base03    $base03 $base0F
 #  client.unfocused        $base02 $base02    $base03 $base0F
 #  client.urgent           $base02 $base08    $base00 $base0F

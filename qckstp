@@ -1,4 +1,4 @@
-zsudo apt update
+sudo apt update
 
 sudo apt install bcmwl-kernel-source git vlc i3wm
 
@@ -9,6 +9,9 @@ snap install firefox
 sudo apt remove firefox
 
 git clone https://github.com/JetErorr/GnomeBKP ~/gnomebkp
+
+cd ~/gnomebkp/Scripts/
+chmod +x *
 
 echo 'export PATH="$HOME/gnomebkp/Scripts:$PATH"' >> ~/.bashrc
 
@@ -31,3 +34,12 @@ sudo apt install cmake libxcb1 libxcb1-dev libxcb-composite0-dev
 sudo apt install xcb-proto xcb python2.7-dev python-xcbgen libiw-dev libpulse-dev 
 sudo apt install libasound2-dev
 
+sudo apt install fonts-font-awesome
+
+#Insert polybar config here
+
+sudo apt install lxappearance htop backlight
+
+#Echo Intel Brightness
+
+sudo apt intall scrot nnn
