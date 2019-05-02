@@ -175,7 +175,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 #Compton
 exec_always pkill compton
-exec_always pwd
+exec_always --no-startup-id echo 'hi'
 exec_always --no-startup-id compton
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
@@ -193,7 +193,7 @@ for_window [class="Gnome-terminal"] floating enable, move absolute position 281 
 #-g 150x150+150x150
 #i3-gaps
 #smart_gaps on
-gaps outer 10
+gaps outer 11
 gaps inner 0
 #gaps horizontal 2
 #alt-tab window switcher w/ rofi
@@ -201,8 +201,8 @@ bindsym Mod1+Tab exec rofi -show window
 #lockscript
 $super+l exec ~/gnomebkp/Scripts/lockk
 # Widow Colours // Needs Ricing, visit /r/unixporn subreddit
-#                         border  background text    indicator
-client.focused #ffffff #ffffff #ffffff #ffffff
+#                          border  background text    indicator
+   client.focused          #ffffff #ffffff    #ffffff #ffffff
 #  client.focused_inactive $base03 $base03    $base03 $base0F
 #  client.unfocused        $base02 $base02    $base03 $base0F
 #  client.urgent           $base02 $base08    $base00 $base0F
