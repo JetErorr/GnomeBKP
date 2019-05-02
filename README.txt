@@ -37,6 +37,7 @@ Files required->
 ==cmatrix
 =xautolock
 =xblacklight
+
 ==Auto script maker
 	==(export PATH=/home/user/lmaoxd/bin:$PATH)
 	==PATH="$HOME/Scripts:PATH"

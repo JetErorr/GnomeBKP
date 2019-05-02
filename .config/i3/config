@@ -18,9 +18,11 @@ font pango:Fira Code Medium 8
 # font, it doesn’t scale on retina/hidpi displays.
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-# start a terminal
+#Start a terminal
+
 bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec konsole
+#bindsym $mod+Return exec hyper
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -172,7 +174,8 @@ exec --no-startup-id nm-applet
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 #Compton
-exec pkill compton
+exec_always pkill compton
+exec_always pwd
 exec_always --no-startup-id compton
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
@@ -183,13 +186,15 @@ exec xinput set-prop 12 "libinput Natural Scrolling Enabled" 1
 exec xinput set-prop 16 "libinput Natural Scrolling Enabled" 1
 #Window border, all windows
 for_window [class="^.*"] border pixel 1
+for_window [class="Gnome-terminal"] floating enable, move absolute position 281 px 154 px
+#for_window [class="Hyper"] floating enable, move absolute position -1 px -1 px, border pixel 0
 #for_window [class="Nautilus"] floating enable
 #$super+o exec 'nautilus --geometry=150x150'
 #-g 150x150+150x150
 #i3-gaps
 #smart_gaps on
-gaps outer 0
-gaps inner 5
+gaps outer 10
+gaps inner 0
 #gaps horizontal 2
 #alt-tab window switcher w/ rofi
 bindsym Mod1+Tab exec rofi -show window
@@ -206,13 +211,15 @@ client.focused #ffffff #ffffff #ffffff #ffffff
 #exec_always --no-startup-id pkill polybar
 #exec_always --no-startup-id polybar main
 exec_always --no-startup-id $HOME/gnomebkp/Scripts/poly
+#exec --no-startup-id redshift -l 22.33333:70.83333
 $super+Shift+p exec "polybar-msg cmd toggle"
 #Volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioMute exec "~/gnomebkp/Scripts/mute"
 #Experimental
 $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
     -nb "#222222" -sb "#aa0088" -sf "#ffffff" -fn Monospace-11 \
         -nf "#7777bb" -i -p "Exit i3 X session?") = "YES" ] && i3-msg exit`
-        
+
+
