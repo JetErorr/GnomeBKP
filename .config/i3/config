@@ -156,8 +156,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        mode hide
 	}
+
+$super+o exec i3-msg bar mode toggle
 #Launcher
 #$super+d exec dmenu_run
 $super+d exec rofi -show run -theme onedark

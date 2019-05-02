@@ -42,4 +42,4 @@ sudo apt install lxappearance htop backlight
 
 #Echo Intel Brightness
 
-sudo apt intall scrot nnn imagemagick nmp compton-conf vim fzf
+sudo apt intall scrot nnn imagemagick nmp compton-conf vim fzf ncdu
