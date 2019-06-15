@@ -1,9 +1,9 @@
 #!/bin/bash
 cd ~/gnomebkp
 #cp Scripts/* ~/Scripts/ -r
-cp .config/rofi/ ~/.config/rofi/* -r
+cp .config/rofi/* ~/.config/rofi/ -r
 cp .config/i3/* ~/.config/i3/ -r
-cp .config/polybar/ ~/.config/polybar/* -r
-cp .zshrc ~/.zshrc
-cp .oh-my-zsh/ ~/.oh-my-zsh/* -r
-echo Done
+#cp .config/polybar/ ~/.config/polybar/* -r
+#cp .zshrc ~/.zshrc
+#cp .oh-my-zsh/ ~/.oh-my-zsh/* -r
+echo DeSynced
