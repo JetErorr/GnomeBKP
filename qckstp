@@ -27,8 +27,7 @@ libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
 autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 
 sudo apt install nitrogen rofi toilet lolcat compton
-
-sudo cp ~/.config/rofi/* /usr/share/rofi/themes/
+sudo cp ~/gnomebkp/.config/rofi/* /usr/share/rofi/themes/
 #rofi-theme-selector
 
 sudo apt install cmake libxcb1 libxcb1-dev libxcb-composite0-dev 
