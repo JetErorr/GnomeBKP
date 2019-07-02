@@ -192,7 +192,7 @@ for_window [class="^.*"] border pixel 1
 #-g 150x150+150x150
 #i3-gaps
 #smart_gaps on
-gaps outer 5
+gaps outer 0
 gaps inner 0
 #gaps horizontal 2
 #alt-tab window switcher w/ rofi
@@ -216,8 +216,8 @@ $super+Shift+p exec "polybar-msg cmd toggle"
 #bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 #bindsym XF86AudioMute exec "~/gnomebkp/Scripts/mute"
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 #Experimental
 $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
