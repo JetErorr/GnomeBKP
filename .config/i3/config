@@ -165,7 +165,7 @@ $super+d exec rofi -show run -theme onedark
 #Wallpaper
 exec --no-startup-id nitrogen --restore
 #Locker
-exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 3"
+exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 1"
 #Screenshots
 bindsym Print exec "scrot -e 'mv $f ~/Pictures/Screenshots/'"
 $super+Print exec "scrot -ue 'mv $f ~/Pictures/Screenshots/'"
@@ -223,5 +223,5 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
     -nb "#222222" -sb "#aa0088" -sf "#ffffff" -fn Monospace-11 \
         -nf "#7777bb" -i -p "Exit i3 X session?") = "YES" ] && i3-msg exit`
-
-
+#Key repeat rate
+exec xset r rate 0 50
