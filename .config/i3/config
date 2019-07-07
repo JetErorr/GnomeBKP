@@ -168,7 +168,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 1"
 #Screenshots
 bindsym Print exec "scrot -e 'mv $f ~/Pictures/Screenshots/'"
-$super+Print exec "scrot -ue 'mv $f ~/Pictures/Screenshots/'"
+$super+Print exec "scrot -s -e 'mv $f ~/Pictures/Screenshots/'"
 #Wireless
 exec --no-startup-id nm-applet
 #Brightness
@@ -181,10 +181,11 @@ exec_always --no-startup-id compton
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
 #Enable tapping on the touchpad
-exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
 #Window border, all windows
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border none
+#pixel 1
 #for_window [class="Gnome-terminal"] floating enable, move absolute position 281 px 154 px
 #for_window [class="Hyper"] floating enable, move absolute position -1 px -1 px, border pixel 0
 #for_window [class="Nautilus"] floating enable
@@ -192,8 +193,10 @@ for_window [class="^.*"] border pixel 1
 #-g 150x150+150x150
 #i3-gaps
 #smart_gaps on
-gaps outer 0
-gaps inner 0
+#gaps outer 12
+gaps outer 4
+#gaps inner 10
+gaps inner 3
 #gaps horizontal 2
 #alt-tab window switcher w/ rofi
 bindsym Mod1+Tab exec rofi -show window
@@ -224,4 +227,4 @@ $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
     -nb "#222222" -sb "#aa0088" -sf "#ffffff" -fn Monospace-11 \
         -nf "#7777bb" -i -p "Exit i3 X session?") = "YES" ] && i3-msg exit`
 #Key repeat rate
-exec xset r rate 0 50
+exec_always --no-startup-id "xset r rate 300 50"

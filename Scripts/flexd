@@ -2,6 +2,6 @@
 while [ true ]
 do
 flex "$1"
-#sleep .1
+sleep .2
 #clear
 done
