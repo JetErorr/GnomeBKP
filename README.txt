@@ -97,3 +97,4 @@ EndSection
 =nnn
 =ranger
 =ncdu
+=glances
