@@ -1,6 +1,10 @@
 sudo apt update
 
-sudo apt install bcmwl-kernel-source git vlc i3wm
+sudo apt install bcmwl-kernel-source git vlc i3
+
+git config --global user.name "JetErorr"
+git config --global user.email "jardeshna@gmail.com"
+git config --global credential.store store
 
 #snap install code --classic
 
@@ -42,4 +46,4 @@ sudo apt install lxappearance htop backlight
 
 #Echo Intel Brightness
 
-sudo apt intall scrot nnn imagemagick nmp compton-conf vim fzf ncdu
+sudo apt install scrot nnn imagemagick ncmpcpp compton-conf vim fzf ncdu glances
