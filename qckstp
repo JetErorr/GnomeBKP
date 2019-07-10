@@ -41,4 +41,4 @@ sudo apt install fonts-font-awesome
 sudo apt install lxappearance htop backlight
 #Echo Intel Brightness
 
-sudo apt install scrot nnn imagemagick ncmpcpp compton-conf vim fzf ncdu glances
+sudo apt install scrot nnn imagemagick ncmpcpp compton-conf vim fzf ncdu glances net-tools
