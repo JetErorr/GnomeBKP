@@ -7,18 +7,15 @@ git config --global user.email "jardeshna@gmail.com"
 git config --global credential.store store
 
 #snap install code --classic
-
 #snap install firefox
-
 #sudo apt remove firefox
 
-git clone https://github.com/JetErorr/GnomeBKP ~/gnomebkp
+#Scripts
 
+git clone https://github.com/JetErorr/GnomeBKP ~/gnomebkp
 cd ~/gnomebkp/Scripts/
 chmod +x *
-
 echo 'export PATH="$HOME/gnomebkp/Scripts:$PATH"' >> ~/.bashrc
-
 . .bashrc
 
 #https://github.com/Airblader/i3/wiki/Building-from-source
@@ -39,11 +36,9 @@ sudo apt install xcb-proto xcb python2.7-dev python-xcbgen libiw-dev libpulse-de
 sudo apt install libasound2-dev
 
 sudo apt install fonts-font-awesome
-
 #Insert polybar config here
 
 sudo apt install lxappearance htop backlight
-
 #Echo Intel Brightness
 
 sudo apt install scrot nnn imagemagick ncmpcpp compton-conf vim fzf ncdu glances
