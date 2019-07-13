@@ -4,7 +4,7 @@ sudo apt install bcmwl-kernel-source git vlc i3
 
 git config --global user.name "JetErorr"
 git config --global user.email "jardeshna@gmail.com"
-git config --global credential.store store
+git config --global credential.helper store
 
 #snap install code --classic
 #snap install firefox
