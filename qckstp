@@ -16,7 +16,7 @@ git clone https://github.com/JetErorr/GnomeBKP ~/gnomebkp
 cd ~/gnomebkp/Scripts/
 chmod +x *
 echo 'export PATH="$HOME/gnomebkp/Scripts:$PATH"' >> ~/.bashrc
-. .bashrc
+. ~/.bashrc
 
 #https://github.com/Airblader/i3/wiki/Building-from-source
 
