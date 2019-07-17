@@ -179,7 +179,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 #Compton
 exec_always pkill compton
 exec_always --no-startup-id echo 'hi'
-exec_always --no-startup-id compton
+exec_always --no-startup-id compton --shadow-exclude '!I3_FLOATING_WINDOW@:c'
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
 #Enable tapping on the touchpad
@@ -196,9 +196,9 @@ for_window [class="^.*"] border none
 #i3-gaps
 #smart_gaps on
 #gaps outer 12
-gaps outer 4
+gaps outer 0
 #gaps inner 10
-gaps inner 3
+gaps inner 4
 #gaps horizontal 2
 #alt-tab window switcher w/ rofi
 bindsym Mod1+Tab exec rofi -show window -theme onedark
