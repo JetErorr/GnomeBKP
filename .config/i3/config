@@ -201,7 +201,7 @@ gaps outer 4
 gaps inner 3
 #gaps horizontal 2
 #alt-tab window switcher w/ rofi
-bindsym Mod1+Tab exec rofi -show window
+bindsym Mod1+Tab exec rofi -show window -theme onedark
 #lockscript
 $super+l exec ~/gnomebkp/Scripts/lockk
 # Widow Colours // Needs Ricing, visit /r/unixporn subreddit
