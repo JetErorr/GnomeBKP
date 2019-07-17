@@ -38,7 +38,7 @@ sudo apt install libasound2-dev
 sudo apt install fonts-font-awesome
 #Insert polybar config here
 
-sudo apt install lxappearance htop backlight
+sudo apt install lxappearance htop xbacklight
 #Echo Intel Brightness
 
 sudo apt install scrot nnn imagemagick ncmpcpp compton-conf vim fzf ncdu glances net-tools
