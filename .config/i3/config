@@ -250,4 +250,5 @@ $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
         -nf "#7777bb" -i -p "Exit i3 X session?") = "YES" ] && i3-msg exit`
 
 #Key repeat rate
-exec_always --no-startup-id "xset r rate 300 50"
+exec_always --no-startup-id "xset r rate 300 60"
+
