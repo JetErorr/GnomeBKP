@@ -160,39 +160,51 @@ bar {
 	}
 
 $super+o exec i3-msg bar mode toggle
+
 #Launcher
 #$super+d exec dmenu_run
 $super+d exec rofi -show run -theme onedark
+
 #Wallpaper
 exec --no-startup-id nitrogen --restore
+
 #Locker
 exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 1"
+
 #Screenshots
 bindsym Print exec "scrot -e 'mv $f ~/Pictures/'"
 bindsym --release $mod+Shift+Print exec "scrot -se 'mv $f ~/Pictures/'"
 $super+Print exec "scrot -ue 'mv $f ~/Pictures/'"
+
 #Wireless
 exec --no-startup-id nm-applet
+
 #Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
 #Compton
 exec_always pkill compton
 exec_always --no-startup-id echo 'hi'
 exec_always --no-startup-id compton --shadow-exclude '!I3_FLOATING_WINDOW@:c'
+
 #Tilda-dropdown terminal
 exec --no-startup-id tilda
+
 #Enable tapping on the touchpad
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+
 #Window border, all windows
 for_window [class="^.*"] border none
 #pixel 1
 #for_window [class="Gnome-terminal"] floating enable, move absolute position 281 px 154 px
 #for_window [class="Hyper"] floating enable, move absolute position -1 px -1 px, border pixel 0
 #for_window [class="Nautilus"] floating enable
+
 #$super+o exec 'nautilus --geometry=150x150'
 #-g 150x150+150x150
+
 #i3-gaps
 #smart_gaps on
 #gaps outer 12
@@ -200,10 +212,13 @@ gaps outer 0
 #gaps inner 10
 gaps inner 4
 #gaps horizontal 2
+
 #alt-tab window switcher w/ rofi
-bindsym Mod1+Tab exec rofi -show window -theme onedark
+bindsym Mod1+Tab exec --no-startup-id rofi -show window -theme onedark
+
 #lockscript
 $super+l exec ~/gnomebkp/Scripts/lockk
+
 # Widow Colours // Needs Ricing, visit /r/unixporn subreddit
 #                          border  background text    indicator
    client.focused          #ffffff #ffffff    #ffffff #ffffff
@@ -211,12 +226,16 @@ $super+l exec ~/gnomebkp/Scripts/lockk
 #  client.unfocused        $base02 $base02    $base03 $base0F
 #  client.urgent           $base02 $base08    $base00 $base0F
 ##########
+
 #Polybar
 #exec_always --no-startup-id pkill polybar
 #exec_always --no-startup-id polybar main
-exec_always --no-startup-id $HOME/gnomebkp/Scripts/poly
+###exec_always --no-startup-id $HOME/gnomebkp/Scripts/poly
+
 #exec --no-startup-id redshift -l 22.33333:70.83333
-$super+Shift+p exec "polybar-msg cmd toggle"
+
+##$super+Shift+p exec "polybar-msg cmd toggle"
+
 #Volume
 #bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
@@ -224,9 +243,11 @@ $super+Shift+p exec "polybar-msg cmd toggle"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
 #Experimental
 $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
     -nb "#222222" -sb "#aa0088" -sf "#ffffff" -fn Monospace-11 \
         -nf "#7777bb" -i -p "Exit i3 X session?") = "YES" ] && i3-msg exit`
+
 #Key repeat rate
 exec_always --no-startup-id "xset r rate 300 50"
