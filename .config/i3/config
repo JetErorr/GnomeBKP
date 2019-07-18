@@ -184,7 +184,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 #Compton
-exec_always pkill compton
+exec_always --no-startup-id pkill compton
 exec_always --no-startup-id echo 'hi'
 exec_always --no-startup-id compton --shadow-exclude '!I3_FLOATING_WINDOW@:c'
 
