@@ -166,7 +166,8 @@ $super+o exec i3-msg bar mode toggle
 $super+d exec rofi -show run -theme onedark
 
 #Wallpaper
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id xwallpaper --zoom lake.jpg
 
 #Locker
 exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 1"
@@ -177,7 +178,7 @@ bindsym --release $mod+Shift+Print exec "scrot -se 'mv $f ~/Pictures/'"
 $super+Print exec "scrot -ue 'mv $f ~/Pictures/'"
 
 #Wireless
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 
 #Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -189,7 +190,7 @@ exec_always --no-startup-id echo 'hi'
 exec_always --no-startup-id compton --shadow-exclude '!I3_FLOATING_WINDOW@:c'
 
 #Tilda-dropdown terminal
-exec --no-startup-id tilda
+#exec --no-startup-id tilda
 
 #Enable tapping on the touchpad
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
