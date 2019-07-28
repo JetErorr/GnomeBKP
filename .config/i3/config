@@ -193,8 +193,8 @@ exec_always --no-startup-id compton --shadow-exclude '!I3_FLOATING_WINDOW@:c'
 #exec --no-startup-id tilda
 
 #Enable tapping on the touchpad
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
 
 #Window border, all windows
 for_window [class="^.*"] border none
@@ -243,9 +243,10 @@ $super+l exec ~/gnomebkp/Scripts/lockk
 #bindsym XF86AudioMute exec "~/gnomebkp/Scripts/mute"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+# mute sound-
 
-#Experimental
+##Experimentals
 $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
     -nb "#222222" -sb "#aa0088" -sf "#ffffff" -fn Monospace-11 \
         -nf "#7777bb" -i -p "Exit i3 X session?") = "YES" ] && i3-msg exit`
@@ -253,3 +254,7 @@ $super+Shift+e exec --no-startup-id `[ $(printf "NO\nYES" | dmenu \
 #Key repeat rate
 exec_always --no-startup-id "xset r rate 300 60"
 
+exec --no-startup-id "modprobe --force wl"
+
+#Centering
+bindsym $mod+c [con_id="__focused__"] move position center
