@@ -23,7 +23,6 @@ floating_modifier $mod
 
 bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec konsole
-#bindsym $mod+Return exec hyper
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -35,23 +34,11 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -187,7 +174,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 #Compton
 exec_always --no-startup-id pkill compton
 #exec_always --no-startup-id echo 'hi'
-exec_always sleep 0.1
+exec_always sleep 0.05
 exec_always --no-startup-id compton --shadow-exclude '!I3_FLOATING_WINDOW@:c'
 
 #Tilda-dropdown terminal
@@ -199,10 +186,8 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 
 #Window border, all windows
 for_window [class="^.*"] border none
-#for_window [window_type="I3_FLOATING_WINDOW"] border pixel 25
 #pixel 1
-#for_window [class="Gnome-terminal"] floating enable, move absolute position 281 px 154 px
-#for_window [class="Hyper"] floating enable, move absolute position -1 px -1 px, border pixel 0
+for_window [class="URxvt"] floating enable, move absolute position 281 px 154 px
 #for_window [class="Nautilus"] floating enable
 
 #$super+o exec 'nautilus --geometry=150x150'
