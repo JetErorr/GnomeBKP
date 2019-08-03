@@ -167,7 +167,7 @@ $super+d exec rofi -show run -theme onedark
 
 #Wallpaper
 #exec --no-startup-id nitrogen --restore
-exec_always --no-startup-id xwallpaper --zoom lake.jpg
+exec_always --no-startup-id xwallpaper --zoom ~/Pictures/mountains.jpg
 
 #Locker
 exec --no-startup-id xautolock -locker "i3lock -c 333333 -min 1"
@@ -199,6 +199,7 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 
 #Window border, all windows
 for_window [class="^.*"] border none
+#for_window [window_type="I3_FLOATING_WINDOW"] border pixel 25
 #pixel 1
 #for_window [class="Gnome-terminal"] floating enable, move absolute position 281 px 154 px
 #for_window [class="Hyper"] floating enable, move absolute position -1 px -1 px, border pixel 0
