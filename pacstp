@@ -1,0 +1,70 @@
+#Pacman update
+sudo pacman -Sy
+
+##Basic Install
+# i3wm
+# Git
+# Xorg Display Server
+# Xorg Startup Init
+# Xorg Backlight ( Brightness Control )
+# Xorg Input ( Keybinds )
+# Xorg Wallpaper
+# Xorg Autolock ( AFK exec timer, Uses i3lock as locker )
+# Terminal ( RXVT Unicode )
+# Font ( Libertine )
+# Font ( Inconsolata )
+# App Launcher ( Dmenu )
+##
+
+sudo pacman -S i3 git xorg-server xorg-init xorg-xbacklight xorg-xinput xwallpaper xautolock rxvt-unicode ttf-linux-libertine ttf-inconsolata dmenu
+
+##Add new user ( replace 'detail' with username )
+useradd detail
+passwd detail
+
+##PERFORM VISUDO STEP HERE
+
+##Switch to the new user
+su detail
+
+##Appending commands, To launch scripts at user login
+echo "exec i3" >> ~/.xinitrc
+echo "exec startx" >> ~/.bash_profile
+
+##Installing AUR wrapper, Current : Yaourt
+#Prerequisites
+cd
+git clone https://aur.archlinux.org/package-query.git
+cd package-query
+sudo makepkg -si
+cd..
+#Yaourt
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+sudo makepkg -si
+cd ..
+
+##Installing WiFi driver from AUR, using Yaourt
+# Installing
+yaourt -S broadcom-wl
+# Configuring and enabling ( restart / relogin after this step )
+modprobe --force wl
+
+##Personalization Install
+# Firefox ( Web browser )
+# ncdu ( Ncurses Disk Usage )
+# [Deprecated] wireless-tools ( For commands like iwconfig )
+# nmapplet ( Tray applet for Network-Manager package )
+# neofetch ( System info script )
+# htop ( Process viewer )
+# scrot ( For Screenshots )
+# pulseaudio
+
+yaourt -S 
+
+
+##Advanced install, not required for daily use
+# xprop ( Window details, for scripting with i3 )
+# wget ( CLI downloader )
+# rofi ( App launcher, dmenu alternative )
+yaourt -S xorg-xprop wget rofi
