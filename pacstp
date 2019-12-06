@@ -1,70 +1,134 @@
 #Pacman update
+
 sudo pacman -Sy
 
+
+
 ##Basic Install
-# i3wm
-# Git
-# Xorg Display Server
-# Xorg Startup Init
-# Xorg Backlight ( Brightness Control )
-# Xorg Input ( Keybinds )
-# Xorg Wallpaper
-# Xorg Autolock ( AFK exec timer, Uses i3lock as locker )
-# Terminal ( RXVT Unicode )
-# Font ( Libertine )
-# Font ( Inconsolata )
-# App Launcher ( Dmenu )
-##
+# i3 ( i3wm meta-package )
+# git
+# xorg-sever ( Xorg Display Server )
+# xorg-init ( Startup Script )
+# xorg-xbacklight ( Backlight, Brightness Control )
+# xorg-xinput ( Keybinds )
+# xwallpaper ( For setting the Wallpaper )
+# xautolock ( AFK exec timer, Uses i3lock as locker )
+# rxvt-unicode ( URXVT terminal )
+# ttf-linux-libertine ( Font )
+# ttf-linux-inconsolata ( Font )
+# dmenu ( App Launcher )
 
 sudo pacman -S i3 git xorg-server xorg-init xorg-xbacklight xorg-xinput xwallpaper xautolock rxvt-unicode ttf-linux-libertine ttf-inconsolata dmenu
 
+
+
 ##Add new user ( replace 'detail' with username )
+
 useradd detail
 passwd detail
 
+
+
 ##PERFORM VISUDO STEP HERE
 
+
+
 ##Switch to the new user
+
 su detail
 
+
+
 ##Appending commands, To launch scripts at user login
+
 echo "exec i3" >> ~/.xinitrc
 echo "exec startx" >> ~/.bash_profile
 
+
+
+###System Setup Ends###You should have a working system, booted into the GUI by now###
+
+
+
+##Setup Git credentials
+
+git config --global user.name "JetErorr"
+git config --global user.email "jardeshna@gmail.com"
+git config --global credential.helper store # Careful about this one [lennyface]
+
+
+
 ##Installing AUR wrapper, Current : Yaourt
+
 #Prerequisites
+
 cd
 git clone https://aur.archlinux.org/package-query.git
 cd package-query
 sudo makepkg -si
 cd..
+
 #Yaourt
+
 git clone https://aur.archlinux.org/yaourt.git
 cd yaourt
 sudo makepkg -si
 cd ..
 
+
+
 ##Installing WiFi driver from AUR, using Yaourt
+
 # Installing
+
 yaourt -S broadcom-wl
+
 # Configuring and enabling ( restart / relogin after this step )
+
 modprobe --force wl
 
+
+
 ##Personalization Install
-# Firefox ( Web browser )
+# firefox ( Web browser )
 # ncdu ( Ncurses Disk Usage )
 # [Deprecated] wireless-tools ( For commands like iwconfig )
-# nmapplet ( Tray applet for Network-Manager package )
+# network-manager-applet ( Tray applet for Network-Manager package (nmapplet) )
 # neofetch ( System info script )
 # htop ( Process viewer )
 # scrot ( For Screenshots )
 # pulseaudio
+ ## Manual Setup for pulseaudio
+ # pacmd list-sinks
+ # pacmd set-default-sink 0 # Sink number from list-sinks
+ # pactl ... # Refer i3config
 
-yaourt -S 
+yaourt -S firefox ncdu network-manager-applet neofetch htop scrot pulseaudio
+
 
 
 ##Advanced install, not required for daily use
 # xprop ( Window details, for scripting with i3 )
 # wget ( CLI downloader )
 # rofi ( App launcher, dmenu alternative )
-yaourt -S xorg-xprop wget rofi
+# fzf ( Fuzzy File Search )
+# compton ( Display Compositor )
+# imagemagick ( CLI Image manipulator, used for lockscreen )
+
+yaourt -S xorg-xprop wget rofi fzf compton
+
+# Note: You'll know what to use this format for :
+# [ yaourt --m-arg "--skipchecksums --skippgpcheck" -Sb <packagename> ]
+
+
+
+##Advanced install contd., AUR packages
+# code ( VS CODE stable, text editor / IDE )
+# otf-fira-code ( Fira Code Font )
+# polybar ( GUI status bar )
+# toilet ( uhh... )
+# lolcat ( For Font Coloring )
+# nethogs ( Network Usage Viewer )
+# compton-conf ( GUI Compton config manager )
+
+yaourt -S code otf-fira-code polybar toilet lolcat nethogs compton-conf

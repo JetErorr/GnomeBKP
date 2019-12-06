@@ -168,8 +168,8 @@ $super+Print exec "scrot -ue 'mv $f ~/Pictures/'"
 exec_always --no-startup-id nm-applet
 
 #Brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 #Compton
 exec_always --no-startup-id pkill compton
@@ -202,7 +202,7 @@ gaps inner 4
 #gaps horizontal 2
 
 #alt-tab window switcher w/ rofi
-bindsym Mod1+Tab exec --no-startup-id rofi -show window -theme onedark
+bindsym Mod1+Tab exec --no-startup-id rofi -show window -theme ~/gnomebkp/.config/rofi/onedark
 
 #lockscript
 $super+l exec ~/gnomebkp/Scripts/lockk

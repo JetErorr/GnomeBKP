@@ -1,2 +1,2 @@
 #!/bin/bash
-toilet -t -F border -d ~/gnomebkp/Scripts/ -f 3d.flf "$1" | lolcat
+echo $1 | toilet -t -F border -d ~/gnomebkp/Scripts/ -f 3d.flf | lolcat
