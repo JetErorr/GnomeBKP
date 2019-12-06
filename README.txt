@@ -98,3 +98,4 @@ EndSection
 =ranger
 =ncdu
 =glances
+=**links2 ( TODO: Search for links2 for arch )

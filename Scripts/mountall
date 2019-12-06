@@ -4,9 +4,9 @@ mkdir ~/mount/C
 mkdir ~/mount/Apps
 mkdir ~/mount/Archive
 mkdir ~/mount/Dump
-mkdir ~/mount/Ubuntu
-sudo mount /dev/sda4 ~/mount/C
-sudo mount /dev/sda6 ~/mount/Archive
-sudo mount /dev/sda7 ~/mount/Apps
-sudo mount /dev/sda8 ~/mount/Dump
-#mount /dev/sda11 ~/mount/Ubuntu
+mkdir ~/mount/Extra
+sudo mount /dev/sda2 ~/mount/C
+sudo mount /dev/sdb1 ~/mount/Archive
+sudo mount /dev/sdb2 ~/mount/Apps
+sudo mount /dev/sdb3 ~/mount/Dump
+sudo mount /dev/sdb4 ~/mount/Extra
