@@ -168,8 +168,8 @@ $super+Print exec "scrot -ue 'mv $f ~/Pictures/'"
 exec_always --no-startup-id nm-applet
 
 #Brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 #Compton
 exec_always --no-startup-id pkill compton
