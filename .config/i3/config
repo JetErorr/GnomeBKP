@@ -21,7 +21,8 @@ font pango:Fira Code Medium 8
 floating_modifier $mod
 #Start a terminal
 
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
+#i3-sensible-terminal
 #bindsym $mod+Return exec konsole
 
 # kill focused window
@@ -172,10 +173,10 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 #Compton
-exec_always --no-startup-id pkill compton
+exec_always --no-startup-id pkill picom
 #exec_always --no-startup-id echo 'hi'
-exec_always sleep 0.05
-exec_always --no-startup-id compton --shadow-exclude '!I3_FLOATING_WINDOW@:c'
+exec_always --no-startup-id sleep 0.05
+exec_always --no-startup-id picom --refresh-rate 60 --vsync --backend glx --shadow-exclude '!I3_FLOATING_WINDOW@:c'
 
 #Tilda-dropdown terminal
 #exec --no-startup-id tilda
