@@ -151,7 +151,7 @@ $super+o exec i3-msg bar mode toggle
 
 #Launcher
 #$super+d exec dmenu_run
-$super+d exec rofi -show run -theme ~/gnomebkp/.config/rofi/onedark
+$super+d exec rofi -show run -theme ~/gnomebkp/.config/rofi/onedark.rasi
 
 #Wallpaper
 #exec --no-startup-id nitrogen --restore

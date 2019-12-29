@@ -30,7 +30,7 @@ passwd detail
 
 
 ##PERFORM VISUDO STEP HERE
-
+sudo pacman -S sudo vim
 
 
 ##Switch to the new user
